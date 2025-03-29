@@ -1,0 +1,88 @@
+Objectives:
+
+Database Design:
+Create a relational database schema to represent books, authors, genres, customers, and orders.
+Implement appropriate data types, constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL), and relationships between tables.
+  
+Data Manipulation:
+Insert, update, and delete data within the tables.
+Populate the database with sample data.
+    
+Data Retrieval:
+Perform complex queries to retrieve information from the database using SELECT statements.
+Utilize joins to combine data from multiple tables.
+Implement aggregate functions (SUM, AVG, COUNT, etc.) to summarize data.
+Employ subqueries to filter and retrieve data based on conditions.
+    
+Data Control and Transactions:
+Demonstrate the use of GRANT and REVOKE for controlling user access.
+Implement transaction control using COMMIT, ROLLBACK, and SAVEPOINT for data integrity.
+    
+Advanced SQL Concepts:
+Create views to simplify complex queries and provide customized data access.
+Develop stored procedures to encapsulate reusable logic.
+Use Common Table Expressions(CTEs) to simplify complex queries.
+    
+Reporting and Analysis:
+Generate reports on book sales, customer orders, and inventory.
+Analyze data to identify trends and patterns.
+    
+Database Schema:
+The database will consist of the following tables:
+Authors:
+AuthorID (INT, PRIMARY KEY, AUTO_INCREMENT)
+FirstName (VARCHAR(255), NOT NULL)
+LastName (VARCHAR(255), NOT NULL)
+Nationality (VARCHAR(100))
+    
+Genres:
+GenreID (INT, PRIMARY KEY, AUTO_INCREMENT)
+GenreName (VARCHAR(100), UNIQUE, NOT NULL)
+    
+Books:
+BookID (INT, PRIMARY KEY, AUTO_INCREMENT)
+Title (VARCHAR(255), NOT NULL)
+AuthorID (INT, FOREIGN KEY referencing Authors)
+GenreID (INT, FOREIGN KEY referencing Genres)
+PublicationYear (INT)
+Price (DECIMAL(10, 2))
+StockQuantity (INT)
+    
+Customers:
+CustomerID (INT, PRIMARY KEY, AUTO_INCREMENT)
+FirstName (VARCHAR(255), NOT NULL)
+LastName (VARCHAR(255), NOT NULL)
+Email (VARCHAR(255), UNIQUE)
+PhoneNumber (VARCHAR(20))
+    
+Orders:
+OrderID (INT, PRIMARY KEY, AUTO_INCREMENT)
+CustomerID (INT, FOREIGN KEY referencing Customers)
+OrderDate (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+TotalAmount (DECIMAL(10, 2))
+    
+OrderDetails:
+OrderDetailID (INT, PRIMARY KEY, AUTO_INCREMENT)
+OrderID (INT, FOREIGN KEY referencing Orders)
+BookID (INT, FOREIGN KEY referencing Books)
+Quantity (INT)
+Price (DECIMAL(10, 2))
+SQL Concepts Demonstrated:
+
+DDL: Creating, altering, and dropping tables.
+DML: Inserting, updating, and deleting data.
+DQL: Retrieving data using SELECT statements, joins, aggregate functions, and subqueries.
+DCL: Granting and revoking user privileges.
+TCL: Managing transactions using COMMIT, ROLLBACK, and SAVEPOINT.
+Views: Creating virtual tables for simplified data access.
+Stored Procedures: Encapsulating reusable SQL code.
+CTEs: Creating temporary result sets for complex queries.
+    
+Code Explanation:
+This SQL code effectively demonstrates the implementation of the Book Management System. It covers all the required SQL concepts, including:
+Creating the database and tables.
+Inserting sample data.
+Executing various queries using joins, aggregate functions, and subqueries.
+Implementing views, stored procedures and CTEs.
+Implementing TCL and DCL commands.
+This project provides a comprehensive example of how to build a database-driven application using MySQL.
